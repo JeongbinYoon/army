@@ -251,4 +251,34 @@ button {
     margin-top: 5px;
     text-align: center;
   }
+
+  /* Check Menu */
+  #checkMenu,
+  #healthCare {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    border-radius: var(--size-border-radius-medium);
+    margin-top: 20px;
+    background-color: var(--color-white);
+    position: relative;
+  }
+
+  #checkMenu .checkMenu--icon,
+  #healthCare .healthCare--icon {
+    font-size: var(--font-large);
+    color: var(--color-pink);
+    margin-right: 20px;
+  }
+
+  #checkMenu .cehckMenu--moreBtn,
+  #healthCare .healthCare--moreBtn {
+    margin-left: auto;
+  }
+
+  #checkMenu .cehckMenu--moreBtn i,
+  #healthCare .healthCare--moreBtn i {
+    font-size: var(--font-large);
+    color: var(--color-bright-grey);
+  }
 }
