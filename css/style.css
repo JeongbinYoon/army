@@ -257,7 +257,7 @@ button {
   #healthCare {
     display: flex;
     align-items: center;
-    padding: 16px;
+    padding: 10px 16px;
     border-radius: var(--size-border-radius-medium);
     margin-top: 20px;
     background-color: var(--color-white);
@@ -280,5 +280,92 @@ button {
   #healthCare .healthCare--moreBtn i {
     font-size: var(--font-large);
     color: var(--color-bright-grey);
+  }
+
+  /* Review */
+  #review {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    padding: 16px 16px 0px 16px;
+    border-radius: var(--size-border-radius-medium);
+    background-color: var(--color-white);
+  }
+
+  #review .review--moreBtn {
+    margin: -6px 0 -6px auto;
+    color: var(--color-light-grey);
+  }
+
+  #review .review__items {
+    margin: 0;
+  }
+
+  #review .review__items .items__item {
+    display: flex;
+    margin: 16px 0;
+  }
+
+  #review .review__items .items__item .review__imgBox {
+    min-width: 100px;
+    max-width: 100px;
+    height: 95px;
+    border-radius: var(--size-border-radius-small);
+    overflow: hidden;
+  }
+
+  #review .review__items .items__item .item__review {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 95px;
+    padding: 5px 0;
+    margin-left: 10px;
+  }
+
+  #review .review__items .items__item .review__imgBox .review--img {
+    height: 100%;
+  }
+
+  #review .review__items .item__review .review--title {
+    width: 230px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: var(--font-small);
+    margin: 0;
+    margin-bottom: 8px;
+  }
+
+  #review .review__items .item__review .review__ratingbar {
+    font-size: var(--font-micro);
+    color: var(--color-red);
+    margin-bottom: 5px;
+  }
+
+  #review .review__items .item__review .review--content {
+    width: 230px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: var(--color-light-grey);
+    font-size: var(--font-micro);
+    margin: 0;
+  }
+
+  #review .review__items .review__info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+  }
+
+  #review .review__items .review__info .review--affiliation {
+    font-size: var(--font-micro);
+    margin-top: auto;
+  }
+
+  #review .review__items .info__likesComment .likes,
+  #review .review__items .info__likesComment .comment {
+    color: var(--color-red);
   }
 }

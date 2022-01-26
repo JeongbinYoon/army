@@ -1,6 +1,6 @@
-const sliderContainer = document.querySelector(".slider__items");
-const sliderBtn = [...document.querySelectorAll(".meal__slider button")];
-let items = [...document.querySelectorAll(".items__item")];
+const sliderContainer = document.querySelector("#meal .slider__items");
+const sliderBtn = [...document.querySelectorAll("#meal .meal__slider button")];
+let items = [...document.querySelectorAll("#meal .items__item")];
 let count = 0;
 let move = 0;
 
@@ -26,11 +26,11 @@ function slideItems(count) {
     let copyFirstItem = items[count - 1].cloneNode(true);
     sliderContainer.append(copyFirstItem);
 
-    items = [...document.querySelectorAll(".items__item")];
+    items = [...document.querySelectorAll("#meal .items__item")];
   } else if (count < 0) {
     let copyLastItem = items[items.length - 1].cloneNode(true);
     sliderContainer.insertBefore(copyLastItem, sliderContainer.firstChild);
-    items = [...document.querySelectorAll(".items__item")];
+    items = [...document.querySelectorAll("#meal .items__item")];
   }
 
   items.map((item) => {
