@@ -206,12 +206,10 @@ button {
 
   #meal .meal__slider .leftBtn {
     font-size: 28px;
-    /* margin-right: 30px; */
   }
 
   #meal .meal__slider .rightBtn {
     font-size: 28px;
-    /* margin-left: 30px; */
   }
 
   #meal .slider__items {
