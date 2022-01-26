@@ -8,7 +8,7 @@
   --color-pink: #ffe6e6;
   --color-blue: #64a2ff;
   --color-blue-grey: #ecf0f3;
-  --color-bright-grey: #dadada;
+  --color-bright-grey: #ececec;
   --color-light-grey: #6b6b6b;
   --color-dark-grey: #434343;
   --color-black: #000000;
@@ -422,6 +422,7 @@ button {
     position: absolute;
     top: -100px;
     right: -70px;
+    box-shadow: 0 6px 10px var(--color-light-grey);
   }
 
   #sideDishes .sideDishes__imgBox img {
@@ -508,5 +509,59 @@ button {
     span:nth-child(2) {
     margin-top: 3px;
     font-size: var(--font-micro);
+  }
+
+  /* Allergy */
+  #allergy {
+    width: 100vw;
+    margin-top: 10px;
+    margin-left: calc(-50vw + 50%);
+    padding: 25px 35px 17px 35px;
+    background-color: var(--color-white);
+  }
+
+  #allergy h1 {
+    font-size: var(--font-small);
+  }
+
+  #allergy .allergy__items {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    margin-top: 16px;
+  }
+
+  #allergy .allergy__items .allergy__item {
+    display: flex;
+    align-items: center;
+    margin: 8px 0;
+  }
+
+  #allergy .allergy__items .allergy__item .item__imgBox {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1.5px solid var(--color-light-grey);
+  }
+
+  #allergy .allergy__items .allergy__item .item__imgBox img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  #allergy .allergy__items .allergy__item {
+  }
+
+  #allergy .allergy__items .allergy__item .item--name {
+    font-weight: var(--weight-semi-bold);
+    margin-left: 16px;
+  }
+
+  #allergy .allergy__items .allergy__item .item--type {
+    margin-left: auto;
+    font-size: var(--font-small);
+    color: var(--color-light-grey);
   }
 }
