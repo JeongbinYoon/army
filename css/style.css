@@ -5,7 +5,7 @@
   /* Color */
   --color-white: #ffffff;
   --color-red: #ff5a5a;
-  --color-pink: #ffbebe;
+  --color-pink: #ffe6e6;
   --color-blue: #64a2ff;
   --color-blue-grey: #ecf0f3;
   --color-bright-grey: #dadada;
@@ -18,6 +18,7 @@
   --font-medium: 20px;
   --font-regular: 16px;
   --font-small: 14px;
+  --font-tiny: 12px;
   --font-micro: 10px;
 
   /* Font weight */
@@ -30,6 +31,7 @@
   --size-border-radius-small: 10px;
   --size-border-radius-medium: 20px;
   --size-border-radius-large: 30px;
+  --size-border-radius-extra-large: 50px;
 
   /* Annimation */
   --annimation-duration: 200ms;
@@ -370,7 +372,6 @@ button {
   /* Side dishes */
   #sideDishes {
     padding-top: 16px;
-    border: 1px solid #f00;
     position: relative;
   }
 
@@ -427,5 +428,85 @@ button {
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+
+  /* Food information */
+  #foodInfo {
+    width: 100vw;
+    border-radius: var(--size-border-radius-extra-large)
+      var(--size-border-radius-extra-large) 0 0;
+    margin-top: 10px;
+    margin-left: calc(-50vw + 50%);
+    padding: 35px 35px 20px 35px;
+    background-color: var(--color-white);
+  }
+
+  #foodInfo .foodInfo__foodName {
+    font-size: var(--font-medium);
+    font-weight: 700;
+    color: var(--color-black);
+  }
+
+  #foodInfo .foodInfo__foodDescription {
+    margin: 16px 0 30px 0;
+    font-size: var(--font-small);
+    color: var(--color-light-grey);
+  }
+
+  #foodInfo h2 {
+    font-size: var(--font-small);
+  }
+
+  #foodInfo .foodInfo__nutrition {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 0;
+  }
+
+  #foodInfo .foodInfo__nutrition .nutrition__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60px;
+    height: 115px;
+    border-radius: 30px;
+    background-color: var(--color-pink);
+  }
+
+  #foodInfo .foodInfo__nutrition .nutrition__item .item__value {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-top: 5px;
+    background-color: var(--color-white);
+  }
+
+  #foodInfo .foodInfo__nutrition .nutrition__item .item__valueName {
+    display: flex;
+    flex-direction: column;
+    margin-top: 16px;
+    color: var(--color-red);
+    text-align: center;
+  }
+
+  #foodInfo
+    .foodInfo__nutrition
+    .nutrition__item
+    .item__valueName
+    span:nth-child(1) {
+    font-size: var(--font-tiny);
+  }
+
+  #foodInfo
+    .foodInfo__nutrition
+    .nutrition__item
+    .item__valueName
+    span:nth-child(2) {
+    margin-top: 3px;
+    font-size: var(--font-micro);
   }
 }
