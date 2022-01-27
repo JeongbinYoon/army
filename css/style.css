@@ -551,9 +551,6 @@ button {
     object-fit: cover;
   }
 
-  #allergy .allergy__items .allergy__item {
-  }
-
   #allergy .allergy__items .allergy__item .item--name {
     font-weight: var(--weight-semi-bold);
     margin-left: 16px;
