@@ -4,6 +4,11 @@ let items = [...document.querySelectorAll("#meal .items__item")];
 let count = 0;
 let move = 0;
 
+const checkMenu = document.querySelector("#checkMenu");
+checkMenu.addEventListener("click", () => {
+  calendar();
+});
+
 slideItems(count);
 
 for (const btn of sliderBtn) {
@@ -35,5 +40,15 @@ function slideItems(count) {
 
   items.map((item) => {
     item.style.transform = `translateX(${move}px)`;
+  });
+}
+
+function calendar() {
+  const calendar = document.querySelector("#calendar");
+  calendar.style.display = "block";
+
+  const closeCalendar = document.querySelector("#calendar .calendar__closeBtn");
+  closeCalendar.addEventListener("click", () => {
+    calendar.style.display = "none";
   });
 }
