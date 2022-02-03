@@ -583,7 +583,8 @@ button {
     text-align: center;
     padding: 40px 32px 32px 23px;
     background-color: var(--color-white);
-    border-radius: 0 0 var(--size-border-radius-small);
+    border-radius: 0 0 var(--size-border-radius-medium)
+      var(--size-border-radius-medium);
   }
 
   #calendar .calendar .calendar__content {
@@ -620,6 +621,7 @@ button {
   #calendar .calendar__content .calendar__date {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     width: 100%;
   }
 
@@ -643,15 +645,19 @@ button {
     height: 40px;
   }
 
+  #calendar .calendar__content .calendar__date > span.notThisMonth {
+    color: lightgray;
+  }
+
   #calendar .calendar__content .calendar__date .date--today .today--circle,
-  #calendar .calendar__content .calendar__date .date--active .active--circle {
+  #calendar .calendar__content .calendar__date .date--active {
     display: flex;
     width: 40px;
     height: 40px;
     border-radius: 50%;
     background-color: var(--color-blue-grey);
   }
-  #calendar .calendar__content .calendar__date .date--active .active--circle {
+  #calendar .calendar__content .calendar__date .date--active {
     background-color: var(--color-pink);
   }
 }
