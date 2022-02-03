@@ -254,9 +254,9 @@ button {
     text-align: center;
   }
 
-  /* Check Menu */
-  #checkMenu,
-  #healthCare {
+  /* Check Menu, Health Care */
+  .checkMenu,
+  .healthCare {
     display: flex;
     align-items: center;
     padding: 10px 16px;
@@ -266,20 +266,20 @@ button {
     position: relative;
   }
 
-  #checkMenu .checkMenu--icon,
-  #healthCare .healthCare--icon {
+  .checkMenu .checkMenu--icon,
+  .healthCare .healthCare--icon {
     font-size: var(--font-large);
     color: var(--color-pink);
     margin-right: 20px;
   }
 
-  #checkMenu .cehckMenu--moreBtn,
-  #healthCare .healthCare--moreBtn {
+  .checkMenu .checkMenu--moreBtn,
+  .healthCare .healthCare--moreBtn {
     margin-left: auto;
   }
 
-  #checkMenu .cehckMenu--moreBtn i,
-  #healthCare .healthCare--moreBtn i {
+  .checkMenu .checkMenu--moreBtn i,
+  .healthCare .healthCare--moreBtn i {
     font-size: var(--font-large);
     color: var(--color-bright-grey);
   }
@@ -669,5 +669,98 @@ button {
     font-size: var(--font-regular);
     border-radius: var(--size-border-radius-small);
     background-color: var(--color-red);
+  }
+
+  /* checkMenu */
+  #checkMenu {
+    display: flex;
+    flex-direction: column;
+    background-color: #f9f9f9;
+  }
+
+  #checkMenu .checkMenu__backBtn {
+    margin-top: 16px;
+    margin-right: auto;
+    font-size: var(--font-large);
+    color: var(--color-dark-grey);
+  }
+
+  #checkMenu #nav {
+    display: flex;
+    margin-top: 16px;
+  }
+
+  #checkMenu #nav div[class^="nav"] {
+    width: 33.33%;
+    padding: 6px;
+    color: var(--color-light-grey);
+    text-align: center;
+  }
+
+  #checkMenu #nav div[class^="nav"].active {
+    color: var(--color-red);
+    border-bottom: 1px solid var(--color-red);
+    font-weight: var(--weight-bold);
+  }
+
+  #checkMenu #selectDay {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    font-size: var(--font-small);
+  }
+
+  #checkMenu #selectDay .selectDay__changeMonth {
+    display: flex;
+    align-items: center;
+  }
+
+  #checkMenu #selectDay .selectDay__changeMonth i {
+    margin-left: 5px;
+    font-size: var(--font-medium);
+  }
+
+  #checkMenu .menus {
+    margin: 16px 0 0 0;
+  }
+
+  #checkMenu .menus .menus__item {
+    display: flex;
+    align-items: center;
+    height: 65px;
+    margin-bottom: 16px;
+    background-color: var(--color-white);
+    border-radius: var(--size-border-radius-small);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+  }
+
+  #checkMenu .menus .menus__item .item__imgBox {
+    width: 45px;
+    height: 45px;
+    margin-left: 10px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  #checkMenu .menus .menus__item .item__info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+  }
+
+  #checkMenu .menus .menus__item .item__info .item--name {
+    font-weight: var(--weight-bold);
+  }
+
+  #checkMenu .menus .menus__item .item__info .item--calorie {
+    margin-top: 5px;
+    font-size: var(--font-tiny);
+    color: var(--color-light-grey);
+  }
+
+  #checkMenu .checkRecipe {
+    margin: 0 auto;
+    font-size: var(--font-tiny);
   }
 }
