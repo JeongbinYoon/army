@@ -80,6 +80,9 @@ function calendar() {
     });
   }
 
+  const dateSelectBtn = document.querySelector(".calendar .calendar__select");
+  dateSelectBtn.innerHTML = `${currentYear}년 ${currentMonth}월 ${currentDate}일`;
+
   function makeNewMonth(currentYear, currentMonth) {
     // Last month last date
     const lastMonth = new Date(currentYear, currentMonth - 1, 0);
@@ -146,6 +149,7 @@ function calendar() {
         }
 
         date.setAttribute("class", "date--active");
+        dateSelectBtn.innerHTML = `${currentYear}년 ${currentMonth}월 ${date.textContent}일`;
       });
     }
   }
