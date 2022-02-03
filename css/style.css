@@ -743,6 +743,12 @@ button {
     overflow: hidden;
   }
 
+  #checkMenu .menus .menus__item .item__imgBox img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
   #checkMenu .menus .menus__item .item__info {
     display: flex;
     flex-direction: column;

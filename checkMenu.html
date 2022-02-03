@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>식단표 조회</title>
+    <script
+      src="https://kit.fontawesome.com/0ed7484e2c.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <script src="./src/loadData.js"></script> -->
+    <script src="./src/checkMenu.js" defer></script>
+    <script src="./src/test.js" defer></script>
+  </head>
+  <body id="checkMenu">
+    <button class="checkMenu__backBtn">
+      <i class="fas fa-arrow-left"></i>
+    </button>
+    <nav id="nav">
+      <div class="nav__breakfast active">조식</div>
+      <div class="nav__lunch">중식</div>
+      <div class="nav__dinner">석식</div>
+    </nav>
+    <div id="selectDay">
+      <span class="selectDay__selected">2021년 10월 21일</span>
+      <button class="selectDay__changeMonth">
+        날짜변경
+        <i class="far fa-calendar-alt"></i>
+      </button>
+    </div>
+    <ul class="menus">
+      <!-- <li class="menus__item">
+        <div class="item__imgBox">
+          <img src="./imgs/chicken.jpg" alt="" />
+        </div>
+        <div class="item__info">
+          <span class="item--name">닭매운양념조림</span>
+          <span class="item--calorie">230 kcal</span>
+        </div>
+      </li>
+      <li class="menus__item">
+        <div class="item__imgBox">
+          <img src="./imgs/chicken.jpg" alt="" />
+        </div>
+        <div class="item__info">
+          <span class="item--name">닭매운양념조림</span>
+          <span class="item--calorie">230 kcal</span>
+        </div>
+      </li>
+      <li class="menus__item">
+        <div class="item__imgBox">
+          <img src="./imgs/chicken.jpg" alt="" />
+        </div>
+        <div class="item__info">
+          <span class="item--name">닭매운양념조림</span>
+          <span class="item--calorie">230 kcal</span>
+        </div>
+      </li>
+      <li class="menus__item">
+        <div class="item__imgBox">
+          <img src="./imgs/chicken.jpg" alt="" />
+        </div>
+        <div class="item__info">
+          <span class="item--name">닭매운양념조림</span>
+          <span class="item--calorie">230 kcal</span>
+        </div>
+      </li>
+      <li class="menus__item">
+        <div class="item__imgBox">
+          <img src="./imgs/chicken.jpg" alt="" />
+        </div>
+        <div class="item__info">
+          <span class="item--name">닭매운양념조림</span>
+          <span class="item--calorie">230 kcal</span>
+        </div>
+      </li>
+      <li class="menus__item">
+        <div class="item__imgBox">
+          <img src="./imgs/chicken.jpg" alt="" />
+        </div>
+        <div class="item__info">
+          <span class="item--name">닭매운양념조림</span>
+          <span class="item--calorie">230 kcal</span>
+        </div>
+      </li> -->
+    </ul>
+    <button class="checkRecipe">
+      <span> 조리과정 보기 </span>
+    </button>
+  </body>
+</html>

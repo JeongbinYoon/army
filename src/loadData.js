@@ -2,7 +2,7 @@ const url =
   "http://openapi.foodsafetykorea.go.kr/api/92804346bfe547c5a581/COOKRCP01/json/1/5/RCP_NM=";
 
 loadData(changeURL("두루치기"));
-
+let foodData;
 // Load Data
 function loadData(url) {
   let xhr = new XMLHttpRequest();
@@ -11,8 +11,8 @@ function loadData(url) {
   xhr.onload = () => {
     if (xhr.status === 200) {
       const data = new Function(`return [${xhr.response}];`)();
-      const foodData = foodInfo(data);
-      applyData(foodData);
+      foodData = foodInfo(data);
+      applyFoodInfo(foodData);
     } else {
       console.log("통신 실패");
     }
@@ -27,7 +27,6 @@ function changeURL(foodName) {
 // food information
 function foodInfo(data) {
   const target = data[0].COOKRCP01.row[0];
-  console.log(target);
   const foodImg = target.ATT_FILE_NO_MAIN;
   const foodName = target.RCP_NM;
   const foodCal = target.INFO_ENG;
@@ -45,7 +44,7 @@ function foodInfo(data) {
 }
 
 // Apply data
-function applyData(foodData) {
+function applyFoodInfo(foodData) {
   const imgBox = document.querySelector(".sideDishes__imgBox");
   const name = document.querySelector(".foodInfo__foodName");
   const cal = document.querySelector(".nutrition__item .item__value.cal");
