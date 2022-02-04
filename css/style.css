@@ -568,6 +568,7 @@ button {
   #calendar {
     display: none;
     width: 100vw;
+    min-height: 100vh;
     height: 100%;
     margin-left: calc(-50vw + 50% - 16px);
     background-color: rgba(0, 0, 0, 0.6);

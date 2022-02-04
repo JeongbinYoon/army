@@ -4,12 +4,7 @@ let items = [...document.querySelectorAll("#meal .items__item")];
 let count = 0;
 let move = 0;
 
-const checkMenu = document.querySelector("#checkMenu");
-checkMenu.addEventListener("click", () => {
-  calendar();
-});
-
-slideItems(count);
+sliderContainer && slideItems(count);
 
 for (const btn of sliderBtn) {
   btn.addEventListener("click", (e) => {
@@ -24,6 +19,26 @@ for (const btn of sliderBtn) {
       slideItems(count);
     }
   });
+}
+
+const checkMenu = document.querySelector(".checkMenu");
+checkMenu &&
+  checkMenu.addEventListener("click", () => {
+    calendar();
+  });
+
+const changeDate = document.querySelector("#checkMenu .selectDay__changeMonth");
+changeDate &&
+  changeDate.addEventListener("click", () => {
+    calendar();
+  });
+
+changeSelectDate();
+function changeSelectDate() {
+  const selectedDate = document.querySelector(".selectDay__selected");
+  let selected = JSON.parse(sessionStorage.getItem("selectedDay"));
+  selectedDate &&
+    (selectedDate.innerHTML = `${selected.selectedYear}년 ${selected.selectedMonth}월 ${selected.selectedDate}일`);
 }
 
 function slideItems(count) {
@@ -139,7 +154,6 @@ function calendar() {
     let dates = document.querySelectorAll(".calendar__date>span");
     for (const date of dates) {
       date.addEventListener("click", () => {
-        console.log(date);
         let siblings = (date) =>
           [...date.parentElement.children].filter(
             (e) => e != date && e.classList.contains("date--active")
@@ -164,6 +178,9 @@ function calendar() {
   // Click select button
   dateSelectBtn.addEventListener("click", () => {
     sessionStorage.setItem("selectedDay", JSON.stringify(selectedDay));
+    calendar.style.display = "none";
+
+    changeSelectDate();
   });
 
   // Close calendar

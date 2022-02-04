@@ -10,12 +10,11 @@
       src="https://kit.fontawesome.com/0ed7484e2c.js"
       crossorigin="anonymous"
     ></script>
-    <!-- <script src="./src/loadData.js"></script> -->
     <script src="./src/checkMenu.js" defer></script>
-    <script src="./src/test.js" defer></script>
+    <script src="./src/main.js" defer></script>
   </head>
   <body id="checkMenu">
-    <button class="checkMenu__backBtn">
+    <button class="checkMenu__backBtn" onclick="history.back()">
       <i class="fas fa-arrow-left"></i>
     </button>
     <nav id="nav">
@@ -30,64 +29,39 @@
         <i class="far fa-calendar-alt"></i>
       </button>
     </div>
-    <ul class="menus">
-      <!-- <li class="menus__item">
-        <div class="item__imgBox">
-          <img src="./imgs/chicken.jpg" alt="" />
-        </div>
-        <div class="item__info">
-          <span class="item--name">닭매운양념조림</span>
-          <span class="item--calorie">230 kcal</span>
-        </div>
-      </li>
-      <li class="menus__item">
-        <div class="item__imgBox">
-          <img src="./imgs/chicken.jpg" alt="" />
-        </div>
-        <div class="item__info">
-          <span class="item--name">닭매운양념조림</span>
-          <span class="item--calorie">230 kcal</span>
-        </div>
-      </li>
-      <li class="menus__item">
-        <div class="item__imgBox">
-          <img src="./imgs/chicken.jpg" alt="" />
-        </div>
-        <div class="item__info">
-          <span class="item--name">닭매운양념조림</span>
-          <span class="item--calorie">230 kcal</span>
-        </div>
-      </li>
-      <li class="menus__item">
-        <div class="item__imgBox">
-          <img src="./imgs/chicken.jpg" alt="" />
-        </div>
-        <div class="item__info">
-          <span class="item--name">닭매운양념조림</span>
-          <span class="item--calorie">230 kcal</span>
-        </div>
-      </li>
-      <li class="menus__item">
-        <div class="item__imgBox">
-          <img src="./imgs/chicken.jpg" alt="" />
-        </div>
-        <div class="item__info">
-          <span class="item--name">닭매운양념조림</span>
-          <span class="item--calorie">230 kcal</span>
-        </div>
-      </li>
-      <li class="menus__item">
-        <div class="item__imgBox">
-          <img src="./imgs/chicken.jpg" alt="" />
-        </div>
-        <div class="item__info">
-          <span class="item--name">닭매운양념조림</span>
-          <span class="item--calorie">230 kcal</span>
-        </div>
-      </li> -->
-    </ul>
+    <ul class="menus"></ul>
     <button class="checkRecipe">
       <span> 조리과정 보기 </span>
     </button>
+
+    <section id="calendar">
+      <div class="calendar">
+        <button class="calendar__closeBtn">
+          <i class="fas fa-times"></i>
+        </button>
+        <div class="calendar__content">
+          <div class="calendar__changeMonth">
+            <button class="changeMonth--left">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <span class="calendar--currentMonth"></span>
+            <button class="changeMonth--right">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+          <div class="calendar__day">
+            <span>일</span>
+            <span>월</span>
+            <span>화</span>
+            <span>수</span>
+            <span>목</span>
+            <span>금</span>
+            <span>토</span>
+          </div>
+          <div class="calendar__date"></div>
+          <button class="calendar__select"></button>
+        </div>
+      </div>
+    </section>
   </body>
 </html>
