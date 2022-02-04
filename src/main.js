@@ -70,6 +70,13 @@ function calendar() {
   let currentYear = today.getFullYear();
   let currentMonth = today.getMonth() + 1;
   let currentDate = today.getDate();
+  let selectedDay;
+
+  selectedDay = {
+    selectedYear: currentYear,
+    selectedMonth: currentMonth,
+    selectedDate: currentDate,
+  };
   makeNewMonth(currentYear, currentMonth);
 
   // Click button
@@ -97,7 +104,6 @@ function calendar() {
 
   const dateSelectBtn = document.querySelector(".calendar .calendar__select");
   dateSelectBtn.innerHTML = `${currentYear}년 ${currentMonth}월 ${currentDate}일`;
-  let selectedDay;
 
   function makeNewMonth(currentYear, currentMonth) {
     // Last month last date

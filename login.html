@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>로그인</title>
+    <script
+      src="https://kit.fontawesome.com/0ed7484e2c.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js"
+      charset="utf-8"
+    ></script>
+    <script
+      type="text/javascript"
+      src="http://code.jquery.com/jquery-1.11.3.min.js"
+    ></script>
+
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <script src="./src/login.js" defer></script>
+  </head>
+  <body id="#login">
+    <button class="checkMenu__backBtn" onclick="history.back()">
+      <i class="fas fa-arrow-left"></i>
+    </button>
+    <h1 class="login--text01">로그인을 해주세요</h1>
+    <p class="login--text02">
+      국군 식단관리 어플리케이션 밀리그램입니다. 로그인을 하여 많은 서비스를
+      이용해보세요.
+    </p>
+
+    <section class="login__email">
+      <form action="#" method="post">
+        <p class="input">
+          <input
+            class="input-email"
+            type="text"
+            name="userid"
+            placeholder="Email"
+          />
+        </p>
+        <p class="input">
+          <input
+            class="input-pw"
+            type="password"
+            name="userpw"
+            maxlength="20"
+            placeholder="Pasword"
+          />
+        </p>
+
+        <p class="findPw">
+          <a href="#">비밀번호를 잊으셨나요?</a>
+        </p>
+
+        <p class="input">
+          <input class="input-submit" type="submit" value="로그인" />
+        </p>
+      </form>
+    </section>
+
+    <section id="socialLogin">
+      <!-- Naver login button -->
+      <div id="naver_id_login"></div>
+
+      <!-- Kakao login button -->
+      <button onclick="kakaoLogin();">
+        <img src="./imgs/kakao_login.png" alt="카카오 로그인" />
+      </button>
+    </section>
+  </body>
+</html>
