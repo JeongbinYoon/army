@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>회원정보</title>
+    <script
+      src="https://kit.fontawesome.com/0ed7484e2c.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body id="userInfo">
+    <div class="userInfo__title">
+      <button class="userInfo__backBtn" onclick="history.back()">
+        <i class="fas fa-arrow-left"></i>
+      </button>
+      <h1 class="userInfo--title">기본정보</h1>
+    </div>
+
+    <section id="basicInfo" class="userInfo__section">
+      <h2 class="userInfo__question"><span>Q1.</span><br />기본정보</h2>
+
+      <div class="userInfo__section__box">
+        <div class="basicInfo__profileImg">
+          <div class="basicInfo__imgBox">
+            <img src="./imgs/profile.png" alt="프로필 이미지" />
+          </div>
+          <button class="editImgBtn">
+            <i class="fas fa-plus-circle"></i>
+          </button>
+        </div>
+        <form class="basicInfo--form" action="#" method="post">
+          <input type="text" class="basicInfo__userName" placeholder="이름" />
+          <input
+            type="text"
+            class="basicInfo__userUnit"
+            placeholder="소속부대"
+          />
+          <input type="text" class="basicInfo__userGender" placeholder="성별" />
+          <input
+            type="text"
+            class="basicInfo__userVocational"
+            placeholder="보직"
+          />
+          <input class="completeBtn" type="submit" value="완료" />
+          <i class="fas fa-angle-right"></i>
+        </form>
+      </div>
+    </section>
+  </body>
+</html>
