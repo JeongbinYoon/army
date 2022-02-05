@@ -10,6 +10,7 @@
       src="https://kit.fontawesome.com/0ed7484e2c.js"
       crossorigin="anonymous"
     ></script>
+    <script src="./src/userInfo.js" defer></script>
   </head>
   <body id="userInfo">
     <div class="userInfo__title">
@@ -17,37 +18,109 @@
         <i class="fas fa-arrow-left"></i>
       </button>
       <h1 class="userInfo--title">기본정보</h1>
+      <h1 class="userInfo--title--allergy">알레르기 유발 식품 설정</h1>
     </div>
 
-    <section id="basicInfo" class="userInfo__section">
-      <h2 class="userInfo__question"><span>Q1.</span><br />기본정보</h2>
+    <div class="sections">
+      <section id="basicInfo" class="userInfo__section">
+        <h2 class="userInfo__question"><span>Q1.</span><br />기본정보</h2>
 
-      <div class="userInfo__section__box">
-        <div class="basicInfo__profileImg">
-          <div class="basicInfo__imgBox">
-            <img src="./imgs/profile.png" alt="프로필 이미지" />
+        <div class="userInfo__section__box basicInfo">
+          <div class="basicInfo__profileImg">
+            <div class="basicInfo__imgBox">
+              <img src="./imgs/profile.png" alt="프로필 이미지" />
+            </div>
+            <button class="editImgBtn">
+              <i class="fas fa-plus-circle"></i>
+            </button>
           </div>
-          <button class="editImgBtn">
-            <i class="fas fa-plus-circle"></i>
-          </button>
+          <form class="basicInfo__form" action="#" method="post">
+            <input type="text" class="basicInfo__userName" placeholder="이름" />
+            <input
+              type="text"
+              class="basicInfo__userUnit"
+              placeholder="소속부대"
+            />
+            <input
+              type="text"
+              class="basicInfo__userGender"
+              placeholder="성별"
+            />
+            <input
+              type="text"
+              class="basicInfo__userVocational"
+              placeholder="보직"
+            />
+            <button class="completeBtn">
+              완료
+              <i class="fas fa-angle-right"></i>
+            </button>
+          </form>
         </div>
-        <form class="basicInfo--form" action="#" method="post">
-          <input type="text" class="basicInfo__userName" placeholder="이름" />
-          <input
-            type="text"
-            class="basicInfo__userUnit"
-            placeholder="소속부대"
+      </section>
+      <section id="allergyInfo" class="userInfo__section">
+        <h2 class="userInfo__question">
+          <span>Q2.</span><br />알레르기를 일으키는<br />
+          식품이 있으신가요?<span>(중복 선택가능)</span>
+        </h2>
+
+        <div class="userInfo__section__box allergyInfo">
+          <img
+            src="./imgs/seafood_allergy.png"
+            alt="해산물 및 조개류 알레르기"
           />
-          <input type="text" class="basicInfo__userGender" placeholder="성별" />
-          <input
-            type="text"
-            class="basicInfo__userVocational"
-            placeholder="보직"
-          />
-          <input class="completeBtn" type="submit" value="완료" />
-          <i class="fas fa-angle-right"></i>
-        </form>
-      </div>
-    </section>
+          <p>해산물 및 조개류 알레르기</p>
+          <form class="allergyInfo__form" action="#" method="post">
+            <ul class="form__check">
+              <li>
+                <ul class="form__seafood">
+                  <li>
+                    <label><input type="checkBox" />새우</label>
+                  </li>
+                  <li>
+                    <label><input type="checkBox" />가재</label>
+                  </li>
+                  <li>
+                    <label><input type="checkBox" />게</label>
+                  </li>
+                  <li>
+                    <label><input type="checkBox" />대하</label>
+                  </li>
+                </ul>
+                <hr />
+                <ul class="form__seafood">
+                  <li>
+                    <label><input type="checkBox" />조개</label>
+                  </li>
+                  <li>
+                    <label><input type="checkBox" />굴</label>
+                  </li>
+                  <li>
+                    <label><input type="checkBox" />갑오징어</label>
+                  </li>
+                  <li>
+                    <label><input type="checkBox" />오징어</label>
+                  </li>
+                  <li>
+                    <label><input type="checkBox" />홍합</label>
+                  </li>
+                  <li>
+                    <label><input type="checkBox" />가리비</label>
+                  </li>
+                  <li>
+                    <label><input type="checkBox" />문어</label>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+
+            <button class="completeBtn">
+              완료
+              <i class="fas fa-angle-right"></i>
+            </button>
+          </form>
+        </div>
+      </section>
+    </div>
   </body>
 </html>
