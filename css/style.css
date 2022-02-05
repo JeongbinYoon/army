@@ -772,6 +772,72 @@ button {
   }
 
   /* Login */
+  .splash {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--color-bright-grey);
+  }
+
+  .splash .splash--logo {
+    width: 134px;
+    height: 129px;
+  }
+
+  .splash .line-1 {
+    width: 215px;
+    margin: 0 auto;
+    border-right: 2px solid rgba(255, 255, 255, 0.75);
+    font-size: 100%;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%);
+  }
+
+  /* Animation */
+  .splash {
+    animation: splash 3.3s forwards;
+  }
+  .splash .anim-typewriter {
+    animation: typewriter 1s steps(44) 1s 1 normal both,
+      blinkTextCursor 500ms steps(44) infinite normal;
+  }
+
+  @keyframes splash {
+    80% {
+      transform: translateY(0px);
+    }
+    95% {
+      transform: translateY(30px);
+    }
+    to {
+      transform: translateY(-1000px);
+    }
+  }
+  @keyframes typewriter {
+    from {
+      width: 0;
+    }
+    to {
+      width: 215px;
+    }
+  }
+  @keyframes blinkTextCursor {
+    from {
+      border-right-color: rgba(0, 0, 0, 0.75);
+    }
+    to {
+      border-right-color: transparent;
+    }
+  }
+
   #login .login__backBtn {
     font-size: var(--font-large);
   }
