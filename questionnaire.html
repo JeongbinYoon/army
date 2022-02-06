@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>문진표</title>
+    <script
+      src="https://kit.fontawesome.com/0ed7484e2c.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body id="questionnaire">
+    <header class="header">
+      <i class="fas fa-bars"></i>
+      <span class="page">1/6</span>
+    </header>
+
+    <section id="pages">
+      <div class="pageContainer">
+        <form action="#" method="post">
+          <ul class="page1">
+            <li class="page1__q1">
+              <span>성별</span>
+              <div class="q1--male">남성</div>
+              <div class="q1--female">여성</div>
+            </li>
+            <li class="page1__q2">
+              <span>신장</span>
+              <div class="q2__input"><input type="text" /><span>cm</span></div>
+            </li>
+            <li class="page1__q3">
+              <span>체중</span>
+              <div class="q3__input"><input type="text" /><span>kg</span></div>
+            </li>
+            <li class="page1__q4">
+              <select name="activity" id="activity">
+                <option value="">활동형태</option>
+              </select>
+            </li>
+            <li class="page1__q5">
+              <select name="disease" id="disease">
+                <option value="">갖고 있는 질환</option>
+              </select>
+            </li>
+            <li class="page1__q4">
+              <select name="familyHistory" id="familyHistory">
+                <option value="">갖고 있는 가족력</option>
+              </select>
+            </li>
+            <li class="page1__q5">
+              <select name="surgery" id="surgery">
+                <option value="">갖고 있는 수술력</option>
+              </select>
+            </li>
+            <li class="page1__q6">
+              <select name="purpose" id="purpose">
+                <option value="">추천 식사 이용 목적</option>
+              </select>
+            </li>
+          </ul>
+
+          <button class="nextBtn">
+            계속하기
+            <i class="fas fa-angle-right"></i>
+          </button>
+          <button class="saveBtn">
+            저장하고 나중에 하기
+            <i class="fas fa-angle-right"></i>
+          </button>
+        </form>
+      </div>
+    </section>
+  </body>
+</html>
