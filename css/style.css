@@ -1085,4 +1085,95 @@ input {
   #userInfo .allergyInfo .form__seafood li input {
     zoom: 1.8;
   }
+
+  /* Questionnaire */
+  #questionnaire .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    height: 45px;
+    background-color: var(--color-white);
+    font-size: var(--font-medium);
+  }
+  #questionnaire .header .menuBtn {
+    position: absolute;
+    left: 16px;
+    font-size: var(--font-large);
+  }
+
+  #questionnaire .pageContainer {
+    margin-top: 30px;
+    padding: 30px 35px 16px 35px;
+    background-color: var(--color-white);
+    border-radius: var(--size-border-radius-small);
+  }
+
+  #questionnaire form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #questionnaire .page1 {
+    display: flex;
+    flex-direction: column;
+    color: var(--color-light-grey);
+  }
+
+  #questionnaire .page1 li {
+    display: flex;
+    height: 35px;
+    margin: 5px 0;
+  }
+
+  #questionnaire .page1 .page1__q1,
+  .page1__q2,
+  .page1__q3 {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #questionnaire .page1 .q1__gender div {
+    margin-left: 10px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+  }
+  #questionnaire .page1 .q1__gender div.active {
+    background-color: var(--color-blue-grey);
+  }
+
+  #questionnaire .page1 .q2__input input,
+  #questionnaire .page1 .q3__input input {
+    width: 50px;
+    border-bottom: 1px solid var(--color-dark-grey);
+  }
+
+  #questionnaire .page1 li select {
+    width: 100%;
+    padding: 10px;
+    color: var(--color-light-grey);
+    background-color: var(--color-bright-grey);
+    border: none;
+    border-radius: var(--size-border-radius-small);
+  }
+
+  #questionnaire .page1 .page1__q1 .q1__gender {
+    display: flex;
+  }
+
+  #questionnaire .nextBtn {
+    height: 50px;
+    color: var(--color-white);
+    font-size: var(--font-regular);
+    border-radius: var(--size-border-radius-medium);
+    background-color: var(--color-red);
+  }
+
+  #questionnaire .saveBtn {
+    padding: 16px;
+    color: var(--color-light-grey);
+  }
 }

@@ -10,10 +10,11 @@
       src="https://kit.fontawesome.com/0ed7484e2c.js"
       crossorigin="anonymous"
     ></script>
+    <script src="./src/questionnaire.js" defer></script>
   </head>
   <body id="questionnaire">
     <header class="header">
-      <i class="fas fa-bars"></i>
+      <button class="menuBtn"><i class="fas fa-bars"></i></button>
       <span class="page">1/6</span>
     </header>
 
@@ -23,16 +24,22 @@
           <ul class="page1">
             <li class="page1__q1">
               <span>성별</span>
-              <div class="q1--male">남성</div>
-              <div class="q1--female">여성</div>
+              <div class="q1__gender">
+                <div class="gender--male active">남성</div>
+                <div class="gender--female">여성</div>
+              </div>
             </li>
             <li class="page1__q2">
               <span>신장</span>
-              <div class="q2__input"><input type="text" /><span>cm</span></div>
+              <div class="q2__input">
+                <input type="number" /><span>cm</span>
+              </div>
             </li>
             <li class="page1__q3">
               <span>체중</span>
-              <div class="q3__input"><input type="text" /><span>kg</span></div>
+              <div class="q3__input">
+                <input type="number" /><span>kg</span>
+              </div>
             </li>
             <li class="page1__q4">
               <select name="activity" id="activity">
