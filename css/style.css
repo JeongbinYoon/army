@@ -5,7 +5,7 @@
   /* Color */
   --color-white: #ffffff;
   --color-red: #ff5a5a;
-  --color-pink: #ffe6e6;
+  --color-pink: #ffbebe;
   --color-blue: #64a2ff;
   --color-blue-grey: #ecf0f3;
   --color-bright-grey: #ececec;
@@ -1175,5 +1175,147 @@ input {
   #questionnaire .saveBtn {
     padding: 16px;
     color: var(--color-light-grey);
+  }
+
+  /* My Page */
+  #mypage .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 45px;
+    margin-left: calc(-50vw + 50%);
+    background-color: var(--color-white);
+    color: var(--color-dark-grey);
+  }
+
+  #mypage .header .menuBtn {
+    font-size: var(--font-large);
+    position: absolute;
+    left: 16px;
+  }
+
+  #mypage .header .header--title {
+    display: inline-block;
+    font-size: var(--font-medium);
+  }
+
+  #mypage #myInfo {
+    position: relative;
+    margin-top: 30px;
+    padding: 25px;
+    border-radius: var(--size-border-radius-small);
+    background-color: var(--color-white);
+  }
+
+  #mypage #myInfo .myInfo--name {
+    display: inline-block;
+    margin-bottom: 12px;
+    font-size: var(--font-medium);
+    font-weight: var(--weight-bold);
+    color: var(--color-black);
+  }
+
+  #mypage #myInfo .myInfo__unit,
+  #mypage #myInfo .myInfo__gender,
+  #mypage #myInfo .myInfo__height,
+  #mypage #myInfo .myInfo__birth {
+    margin: 8px 0;
+    color: var(--color-light-grey);
+  }
+  #mypage #myInfo .myInfo__unit .unit--myUnit,
+  #mypage #myInfo .myInfo__gender .gender--myGender,
+  #mypage #myInfo .myInfo__height .height--myHeight,
+  #mypage #myInfo .myInfo__birth .birth--myBirth {
+    margin-left: 16px;
+    color: var(--color-black);
+    font-weight: var(--weight-bold);
+  }
+  #mypage #myInfo .myInfo__group,
+  #mypage #myInfo .myInfo__birth {
+    display: flex;
+  }
+  #mypage #myInfo .myInfo__height {
+    margin-left: 20px;
+  }
+  #mypage #myInfo .myInfo__birth .myInfo--writeQuestionBtn {
+    margin-left: auto;
+  }
+
+  #mypage #myInfo .myInfo__value {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    padding: 16px 20px;
+    background-color: var(--color-bright-grey);
+    border-radius: var(--size-border-radius-small);
+  }
+  #mypage #myInfo .myInfo__value > div {
+    width: 50%;
+    margin: 8px 0;
+    font-size: var(--font-small);
+    color: var(--color-light-grey);
+  }
+  #mypage #myInfo .myInfo__value .weight--myWeight,
+  #mypage #myInfo .myInfo__value .bmr--myBmr,
+  #mypage #myInfo .myInfo__value .bmi--myBmi,
+  #mypage #myInfo .myInfo__value .properKcal--myProperKcal {
+    margin-left: 16px;
+    font-size: var(--font-medium);
+    color: var(--color-black);
+  }
+
+  #mypage #myInfo .myInfo--edit {
+    width: 70px;
+    height: 35px;
+    background-color: var(--color-pink);
+    border-radius: 35px;
+    color: var(--color-red);
+    font-size: var(--font-regular);
+    font-weight: var(--weight-bold);
+    line-height: 35px;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+  }
+
+  #mypage .mypage__achievement,
+  #mypage #mypage__graphs {
+    display: flex;
+    margin-top: 20px;
+    padding: 0 16px;
+    border-radius: var(--size-border-radius-small);
+    background-color: var(--color-white);
+  }
+  #mypage .mypage__achievement {
+    height: 70px;
+    align-items: center;
+  }
+
+  #mypage .mypage__achievement > i:first-child,
+  #mypage #mypage__graphs > div > i:first-child {
+    margin-right: 20px;
+    color: var(--color-pink);
+    font-size: var(--font-large);
+  }
+
+  #mypage .mypage__achievement i.nextBtn {
+    margin-left: auto;
+    color: var(--color-bright-grey);
+    font-size: var(--font-large);
+  }
+
+  #mypage #mypage__graphs {
+    flex-direction: column;
+  }
+
+  #mypage #mypage__graphs > div {
+    display: flex;
+    align-items: center;
+    height: 70px;
+    border-bottom: 1px solid var(--color-bright-grey);
+  }
+  #mypage #mypage__graphs > div:last-child {
+    border: none;
   }
 }
