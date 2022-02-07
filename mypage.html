@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>마이페이지</title>
+    <script
+      src="https://kit.fontawesome.com/0ed7484e2c.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body id="mypage">
+    <header class="header">
+      <button class="menuBtn"><i class="fas fa-bars"></i></button>
+      <h1 class="header--title">MY</h1>
+    </header>
+
+    <section id="myInfo">
+      <span class="myInfo--name">김장병</span>
+      <div class="myInfo__unit">
+        <span>부대</span>
+        <span class="unit--myUnit">8사단 정보통신대대</span>
+      </div>
+      <div class="myInfo__gender">
+        <span>성별</span>
+        <span class="gender--myGender"> 남자 </span>
+      </div>
+      <div class="myInfo__height">
+        <span>키</span>
+        <span class="height--myHeight">180.0cm</span>
+      </div>
+      <div class="myInfo__birth">
+        <span>생년월일</span>
+        <span class="birth--myBirth">1997.12.07</span>
+      </div>
+      <button class="myInfo--writeQuestionnaire">문진표 작성하기</button>
+
+      <div class="myInfo__value">
+        <div class="value__weight">
+          <span>체중</span>
+          <span class="weight--myWeight">80.0kg</span>
+        </div>
+        <div class="value__bmr">
+          <span>기초대사량</span>
+          <span class="bmr--myBmr">80.0kcal</span>
+        </div>
+        <div class="value__bmi">
+          <span>BMI</span>
+          <span class="bmi--myBmi">24.7kg/㎡</span>
+        </div>
+        <div class="value__properKcal">
+          <span>1일 적정량</span>
+          <span class="properKcal--myProperKcal">2072kcal</span>
+        </div>
+      </div>
+
+      <button class="myInfo--edit">수정</button>
+    </section>
+
+    <div class="mypage__achievement">
+      <i class="fas fa-signal"></i>
+      <span>목표 달성률</span>
+      <i class="fas fa-chevron-right"></i>
+    </div>
+
+    <section id="graph">
+      <div class="graph__weight">
+        <i class="far fa-chart-bar"></i>
+        <span>체중 그래프</span>
+        <i class="fas fa-chevron-right"></i>
+      </div>
+      <div class="graph__kcal">
+        <i class="far fa-chart-bar"></i>
+        <span>칼로리 그래프</span>
+        <i class="fas fa-chart-pie"></i>
+      </div>
+    </section>
+  </body>
+</html>
