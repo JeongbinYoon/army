@@ -1,8 +1,11 @@
 let sumCal = 0;
 let url =
-  "http://openapi.foodsafetykorea.go.kr/api/92804346bfe547c5a581/COOKRCP01/json/1/5/";
+  "http://openapi.foodsafetykorea.go.kr/api/92804346bfe547c5a581/COOKRCP01/json/1/5/RCP_NM=";
 
-onLoadFood(url);
+let gbl_data;
+let menuData;
+// onLoadFood(foodURL("토마토두루치기"));
+// console.log(gbl_data);
 
 const today = new Date();
 const currentYear = `${today.getFullYear()}`;
@@ -28,63 +31,96 @@ dateSelectBtn.addEventListener("click", () => {
 
 // Load menus
 function loadSelectedDate(selectedDate, order) {
+  console.log("날짜: " + order);
   loadMenu().then((menus) => {
+    var flag = true;
     const content = document.querySelector(`#checkMenu .menus`);
     content.innerHTML = "";
     console.log(menus[order][`${selectedDate}`]);
     menus[order][`${selectedDate}`] &&
-      menus[order][`${selectedDate}`][0].breakfast.map((menu) => {
-        // onLoadFood(foodURL(menu));
-        console.log(menu);
-        const li = addMenu(menu);
+      menus[order][`${selectedDate}`][0].breakfast.map((menuName) => {
+        onLoadFood(foodURL(menuName));
+        console.log(menuName);
+        console.log(gbl_data);
+        menuData = gbl_data.COOKRCP01.row[0];
+
+        const li = addMenu(
+          menuName,
+          menuInfo(menuData).menuImg,
+          menuInfo(menuData).menukcal
+        );
         content.append(li);
       });
 
+    // Button Click - breakfast, lunch, dinner
     const navBtn = document.querySelectorAll("#nav div");
     for (const btn of navBtn) {
-      btn.addEventListener("click", () => {
-        const siblings = [...navBtn].filter((e) => e !== btn);
-        content.innerHTML = "";
-        btn.classList.add("active");
-        siblings.map((el) => el.classList.remove("active"));
+      btn.onclick =
+        ("click",
+        () => {
+          const siblings = [...navBtn].filter((e) => e !== btn);
+          content.innerHTML = "";
+          btn.classList.add("active");
+          siblings.map((el) => el.classList.remove("active"));
 
-        if (btn.classList.contains("nav__breakfast")) {
-          menus[order][`${selectedDate}`][0].breakfast.map((menu) => {
-            const li = addMenu(menu);
-            content.append(li);
-          });
-        } else if (btn.classList.contains("nav__lunch")) {
-          menus[order][`${selectedDate}`][1].lunch.map((menu) => {
-            const li = addMenu(menu);
-            content.append(li);
-          });
-        } else if (btn.classList.contains("nav__dinner")) {
-          menus[order][`${selectedDate}`][2].dinner.map((menu) => {
-            const li = addMenu(menu);
-            content.append(li);
-          });
-        }
-      });
+          if (btn.classList.contains("nav__breakfast")) {
+            console.log("날짜: " + order);
+            menus[order][`${selectedDate}`][0].breakfast.map((menuName) => {
+              onLoadFood(foodURL(menuName));
+              console.log(menuName);
+              console.log(gbl_data);
+              menuData = gbl_data.COOKRCP01.row[0];
+              const li = addMenu(
+                menuName,
+                menuInfo(menuData).menuImg,
+                menuInfo(menuData).menukcal
+              );
+              content.append(li);
+            });
+          } else if (btn.classList.contains("nav__lunch")) {
+            console.log(order);
+            console.log(menus);
+            menus[order][`${selectedDate}`][1].lunch.map((menuName) => {
+              onLoadFood(foodURL(menuName));
+              console.log(menuName);
+              console.log(gbl_data);
+              menuData = gbl_data.COOKRCP01.row[0];
+              const li = addMenu(
+                menuName,
+                menuInfo(menuData).menuImg,
+                menuInfo(menuData).menukcal
+              );
+              content.append(li);
+            });
+          } else if (btn.classList.contains("nav__dinner")) {
+            console.log(order);
+            menus[order][`${selectedDate}`][2].dinner.map((menuName) => {
+              onLoadFood(foodURL(menuName));
+              console.log(menuName);
+              console.log(gbl_data);
+              menuData = gbl_data.COOKRCP01.row[0];
+              const li = addMenu(
+                menuName,
+                menuInfo(menuData).menuImg,
+                menuInfo(menuData).menukcal
+              );
+              content.append(li);
+            });
+          }
+        });
     }
   });
 }
 
 // Load food's Ingredients data
 function onLoadFood(url) {
-  let xhr = new XMLHttpRequest();
-  xhr.open("POST", url, true);
-  xhr.send();
-
-  xhr.onload = () => {
-    if (xhr.status === 200) {
-      const data = new Function("return [" + xhr.response + "];")();
-      const target = data[0].COOKRCP01.row[0];
-      console.log(target);
-      const cal = Number(target.NUTR_CONT1);
-    } else {
-      console.log("통신 실패");
-    }
-  };
+  $.ajax({
+    url: url,
+    async: false,
+    success: function (data) {
+      gbl_data = data;
+    },
+  }).done(function (data) {});
 }
 
 // Make new URL of Filtered data
@@ -100,7 +136,7 @@ function loadMenu() {
 }
 
 // Add Menu
-function addMenu(menu) {
+function addMenu(menu, menuImg, menukcal) {
   const li = document.createElement("li");
   const imgBox = document.createElement("div");
   const img = document.createElement("img");
@@ -110,16 +146,24 @@ function addMenu(menu) {
 
   li.setAttribute("class", "menus__item");
   imgBox.setAttribute("class", "item__imgBox");
-  img.setAttribute("src", "./imgs/chicken.jpg");
+  img.setAttribute("src", menuImg);
   itemInfo.setAttribute("class", "item__info");
   name.setAttribute("class", "item--name");
   calorie.setAttribute("class", "item--calorie");
 
   name.append(menu);
-  calorie.append("230 kcal");
+  calorie.append(`${menukcal}kcal`);
   imgBox.append(img);
   itemInfo.append(name, calorie);
   li.append(imgBox, itemInfo);
 
   return li;
+}
+
+function menuInfo(menuData) {
+  const menuInfo = {
+    menuImg: menuData.ATT_FILE_NO_MAIN,
+    menukcal: menuData.INFO_ENG,
+  };
+  return menuInfo;
 }
