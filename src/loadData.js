@@ -1,7 +1,7 @@
 const url =
   "http://openapi.foodsafetykorea.go.kr/api/92804346bfe547c5a581/COOKRCP01/json/1/5/RCP_NM=";
 
-loadData(changeURL("두루치기"));
+loadData(changeURL("자장면"));
 let foodData;
 // Load Data
 function loadData(url) {
