@@ -1,3 +1,23 @@
+const loginBtn = document.querySelector(".input-submit");
+const userId = document.querySelector(".input-email");
+const userPw = document.querySelector(".input-pw");
+const register = document.querySelector(".register");
+register.addEventListener("click", () => {
+  sessionStorage.setItem("userId", false);
+});
+
+loginBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  if (userId.value === "") alert("아이디를 입력하세요.");
+  else if (userPw.value === "") alert("비밀번호를 입력하세요.");
+  else if (userId.value === "yon980824@gmail.com" && userPw.value === "1234") {
+    sessionStorage.setItem("userId", true);
+    location.href = "../userInfo.html";
+  }
+  console.log(userId.value);
+});
+
+// Kakao login
 Kakao.init("c35baf49b4333e308118385730b736e6");
 function kakaoLogin() {
   window.Kakao.Auth.login({
@@ -14,6 +34,8 @@ function kakaoLogin() {
     },
   });
 }
+
+// Naver login
 
 var naver_id_login = new naver_id_login(
   "6uOfA2kBGs8Hgq97g0ST",

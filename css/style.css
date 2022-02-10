@@ -793,7 +793,18 @@ input {
     position: fixed;
     top: 0;
     left: 0;
-    background-color: var(--color-bright-grey);
+    background: url("../imgs/millitary.png");
+    background-size: cover;
+  }
+
+  .splash .splash__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 250px;
+    padding: 20px 0;
+    border-radius: var(--size-border-radius-large);
+    background-color: rgba(255, 255, 255, 0.8);
   }
 
   .splash .splash--logo {
@@ -926,6 +937,7 @@ input {
 
   #login .socialLogin .register {
     margin-left: 5px;
+    color: var(--color-dark-grey);
     font-size: var(--font-small);
     font-weight: var(--weight-semi-bold);
   }
@@ -1087,7 +1099,9 @@ input {
   }
 
   /* Questionnaire */
-  #questionnaire .header {
+  #questionnaire .header,
+  #mypage .header,
+  #healthCare .header {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1098,10 +1112,19 @@ input {
     background-color: var(--color-white);
     font-size: var(--font-medium);
   }
-  #questionnaire .header .menuBtn {
+  #questionnaire .header .menuBtn,
+  #mypage .header .menuBtn,
+  #healthCare .header .menuBtn {
     position: absolute;
     left: 16px;
     font-size: var(--font-large);
+  }
+
+  #questionnaire .header .header--title,
+  #mypage .header .header--title,
+  #healthCare .header .header--title {
+    display: inline-block;
+    font-size: var(--font-medium);
   }
 
   #questionnaire .pageContainer {
@@ -1175,29 +1198,6 @@ input {
   #questionnaire .saveBtn {
     padding: 16px;
     color: var(--color-light-grey);
-  }
-
-  /* My Page */
-  #mypage .header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 45px;
-    margin-left: calc(-50vw + 50%);
-    background-color: var(--color-white);
-    color: var(--color-dark-grey);
-  }
-
-  #mypage .header .menuBtn {
-    font-size: var(--font-large);
-    position: absolute;
-    left: 16px;
-  }
-
-  #mypage .header .header--title {
-    display: inline-block;
-    font-size: var(--font-medium);
   }
 
   #mypage #myInfo {
@@ -1316,6 +1316,52 @@ input {
     border-bottom: 1px solid var(--color-bright-grey);
   }
   #mypage #mypage__graphs > div:last-child {
+    border: none;
+  }
+
+  /* Health Care */
+  #healthCare .prescription {
+    margin-top: 25px;
+  }
+  #healthCare .prescription,
+  #healthCare .recommended {
+    margin-bottom: 16px;
+    border-radius: var(--size-border-radius-small);
+    background-color: var(--color-white);
+    padding: 0 16px;
+  }
+  #healthCare .prescription i:first-child,
+  #healthCare .recommended i:first-child,
+  #healthCare ul li i {
+    margin-right: 20px;
+    color: var(--color-pink);
+    font-size: var(--font-large);
+  }
+  #healthCare .prescription i:last-child,
+  #healthCare .recommended i:last-child {
+    margin-left: auto;
+    color: var(--color-bright-grey);
+    font-size: var(--font-large);
+  }
+
+  #healthCare .prescription,
+  #healthCare .recommended,
+  #healthCare ul li a {
+    display: flex;
+    align-items: center;
+    height: 70px;
+    color: var(--color-dark-grey);
+  }
+  #healthCare ul {
+    margin: 0;
+    padding: 0 16px;
+    border-radius: var(--size-border-radius-small);
+    background-color: var(--color-white);
+  }
+  #healthCare ul li {
+    border-bottom: 1px solid var(--color-bright-grey);
+  }
+  #healthCare ul li:last-child {
     border: none;
   }
 }
