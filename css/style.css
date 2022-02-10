@@ -244,7 +244,12 @@ input {
     margin: 0 10px;
     border-radius: var(--size-border-radius-medium);
     box-shadow: 0 3px 6px var(--color-bright-grey);
+    color: var(--color-dark-grey);
     transition: 0.2s;
+  }
+
+  #meal .slider__items .items__item a {
+    color: var(--color-dark-grey);
   }
 
   #meal .slider__items .items__item .item--imgBox {
@@ -453,12 +458,19 @@ input {
     margin-left: calc(-50vw + 50%);
     padding: 35px 35px 20px 35px;
     background-color: var(--color-white);
+    position: relative;
   }
 
   #foodInfo .foodInfo__foodName {
     font-size: var(--font-medium);
     font-weight: 700;
     color: var(--color-black);
+  }
+
+  #foodInfo .foodInfo--recipeBtn {
+    position: absolute;
+    right: 35px;
+    top: 40px;
   }
 
   #foodInfo .foodInfo__foodDescription {
@@ -522,6 +534,102 @@ input {
     span:nth-child(2) {
     margin-top: 3px;
     font-size: var(--font-micro);
+  }
+
+  /* Recipe */
+  #recipe .recipe__backBtn {
+    font-size: var(--font-large);
+  }
+
+  #recipe .recipe__imgBox {
+    width: 325px;
+    height: 310px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    z-index: -10;
+  }
+
+  #recipe .recipe__imgBox img {
+    width: 100%;
+    height: 100%;
+    object-fit: conver;
+  }
+
+  #recipe #ingredient {
+    width: 100vw;
+    margin-top: 50px;
+    margin-left: calc(-50vw + 50%);
+    padding: 35px 35px 20px 35px;
+    border-radius: var(--size-border-radius-extra-large)
+      var(--size-border-radius-extra-large) 0 0;
+    background-color: var(--color-white);
+  }
+
+  #recipe #ingredient .ingredient--foodName {
+    font-size: var(--font-medium);
+    font-weight: 700;
+    color: var(--color-black);
+  }
+
+  #recipe #ingredient .ingredient--discription {
+    margin: 16px 0 30px 0;
+    color: var(--color-light-grey);
+    font-size: var(--font-small);
+  }
+
+  #recipe #ingredient h2 {
+    color: var(--color-dark-grey);
+    font-size: var(--font-regular);
+  }
+
+  #recipe #ingredient .ingredients .ingredients--item {
+    color: var(--color-light-grey);
+    font-size: var(--font-small);
+  }
+
+  #recipe #recipeList {
+    width: 100vw;
+    margin-top: 16px;
+    margin-left: calc(-50vw + 50%);
+    padding: 25px 35px 17px 35px;
+    background-color: var(--color-white);
+  }
+
+  #recipe #recipeList h2 {
+    color: var(--color-dark-grey);
+    font-size: var(--font-regular);
+  }
+
+  #recipe #recipeList .recipe {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  #recipe #recipeList .recipe .recipe--item {
+    display: flex;
+    margin-bottom: 16px;
+  }
+
+  #recipe #recipeList .recipe .recipe--item p {
+    margin: 0;
+    font-size: var(--font-small);
+  }
+
+  #recipe #recipeList .recipe .recipe--item .item__imgBox {
+    min-width: 150px;
+    height: 190px;
+    overflow: hidden;
+    border-radius: var(--size-border-radius-small);
+  }
+
+  #recipe #recipeList .recipe .recipe--item .item__imgBox img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   /* Allergy */
