@@ -1,3 +1,4 @@
+const selectedMeal = document.querySelector("#meal .meal__selected");
 const sliderContainer = document.querySelector("#meal .slider__items");
 const sliderBtn = [...document.querySelectorAll("#meal .meal__slider button")];
 let items = [...document.querySelectorAll("#meal .items__item")];
@@ -18,6 +19,41 @@ for (const btn of sliderBtn) {
       move -= 110;
       slideItems(count);
     }
+  });
+}
+
+selectedMeal.addEventListener("click", (e) => {
+  const target = e.target;
+  if (target.className == "meal__selected") {
+    const pTag = target.querySelector(`.selected--name`);
+    pTagTxt = pTag.textContent;
+  } else if (target.tagName == "IMG") {
+    const pTag =
+      target.parentNode.nextElementSibling.querySelector(`.selected--name`);
+    pTagTxt = pTag.textContent;
+  } else if (target.className == "selected--description") {
+    const pTag = target.nextElementSibling;
+    pTagTxt = pTag.textContent;
+  } else if (target.tagName == "P") {
+    pTagTxt = target.textContent;
+  }
+  sessionStorage.setItem("pTagTxt", pTagTxt);
+});
+
+for (const btn of items) {
+  btn.addEventListener("click", (e) => {
+    const target = e.target;
+    if (target.tagName == "LI" || target.tagName == "A") {
+      const pTag = target.querySelector(`.item--name`);
+      pTagTxt = pTag.textContent;
+    } else if (target.tagName == "IMG") {
+      const pTag = target.parentNode.nextElementSibling;
+      pTagTxt = pTag.textContent;
+    } else if (target.tagName == "P") {
+      pTagTxt = target.textContent;
+    }
+    console.log(pTagTxt);
+    sessionStorage.setItem("pTagTxt", pTagTxt);
   });
 }
 

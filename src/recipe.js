@@ -1,9 +1,8 @@
 let recipeDataURL =
   "http://openapi.foodsafetykorea.go.kr/api/92804346bfe547c5a581/COOKRCP01/json/1/50/RCP_NM=";
 
-$(function () {
-  recipe_returnURL(recipeDataURL, "덮밥");
-});
+const pTagTxt = sessionStorage.getItem("pTagTxt");
+recipe_returnURL(recipeDataURL, pTagTxt);
 
 // url + 음식명
 function ingredients_returnURL(url, food) {
@@ -24,7 +23,7 @@ function recipeData(url) {
     url: url,
   }).done(function (data) {
     const target = data.COOKRCP01.row[0];
-
+    console.log(target);
     // 이름
     const foodName = target.RCP_NM;
     document.querySelector(".ingredient--foodName").innerHTML = foodName;
