@@ -283,6 +283,7 @@ input {
     padding: 10px 16px;
     border-radius: var(--size-border-radius-medium);
     margin-top: 20px;
+    color: var(--color-dark-grey);
     background-color: var(--color-white);
     position: relative;
   }
@@ -853,13 +854,20 @@ input {
   }
 
   #checkMenu .menus .menus__item {
-    display: flex;
-    align-items: center;
+    /* display: flex;
+    align-items: center; */
     height: 65px;
     margin-bottom: 16px;
     background-color: var(--color-white);
     border-radius: var(--size-border-radius-small);
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+  }
+
+  #checkMenu .menus a {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    color: var(--color-dark-grey);
   }
 
   #checkMenu .menus .menus__item .item__imgBox {
@@ -908,18 +916,21 @@ input {
     position: fixed;
     top: 0;
     left: 0;
-    background: url("../imgs/millitary.png");
+    background-color: #ffa320;
     background-size: cover;
   }
 
   .splash .splash__container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    width: 250px;
-    padding: 20px 0;
-    border-radius: var(--size-border-radius-large);
-    background-color: rgba(255, 255, 255, 0.8);
+    width: 270px;
+    height: 270px;
+    /* padding: 20px 0; */
+    background-color: #ffa320;
+    border: 5px solid rgba(255, 255, 255);
+    border-radius: 50%;
   }
 
   .splash .splash--logo {
@@ -930,12 +941,40 @@ input {
   .splash .line-1 {
     width: 215px;
     margin: 0 auto;
-    border-right: 2px solid rgba(255, 255, 255, 0.75);
+    color: #fff;
+    font-weight: var(--weight-bold);
     font-size: 100%;
     text-align: center;
     white-space: nowrap;
     overflow: hidden;
+    border-right: 2px solid rgba(255, 255, 255, 0.75);
     transform: translateY(-50%);
+  }
+
+  .splahs--pattern01 {
+    width: 200px;
+    position: fixed;
+    bottom: -30px;
+    left: -50px;
+  }
+  .splahs--pattern02 {
+    width: 200px;
+    position: fixed;
+    top: -40px;
+    right: -40px;
+  }
+  .splahs--pattern03 {
+    width: 100px;
+    position: fixed;
+    top: 540px;
+    right: 40px;
+  }
+  .splahs--pattern04 {
+    width: 150px;
+    position: fixed;
+    top: 250px;
+    left: -15px;
+    z-index: -10;
   }
 
   /* Animation */
@@ -1041,8 +1080,14 @@ input {
     background-color: var(--color-white);
   }
 
+  #login .socialLogin .digitalPassLoginBtn {
+    width: 208px;
+    height: 45px;
+    margin-bottom: 10px;
+  }
+
   #login .socialLogin .kakaoLogin {
-    margin-top: 10px;
+    margin-top: 4px;
   }
 
   #login .socialLogin .registerText {
@@ -1229,9 +1274,10 @@ input {
   }
   #questionnaire .header .menuBtn,
   #mypage .header .menuBtn,
-  #healthCare .header .menuBtn {
+  #healthCare .header .header__backBtn {
     position: absolute;
     left: 16px;
+    color: var(--color-dark-grey);
     font-size: var(--font-large);
   }
 
@@ -1478,5 +1524,31 @@ input {
   }
   #healthCare ul li:last-child {
     border: none;
+  }
+
+  /* Imgs */
+  /* 건강검진이력 */
+  #medicalRecords,
+  #recommend,
+  #weightManage,
+  #weightManage2,
+  #mealRecords,
+  #goalProject,
+  #medicInfo {
+    padding: 0;
+  }
+  #medicalRecords img,
+  #recommend img,
+  #weightManage img,
+  #mealRecords img,
+  #goalProject img,
+  #medicInfo img {
+    width: 100%;
+  }
+
+  #weightManage .weightImg2,
+  #mealRecords .calendarImg,
+  #mealRecords .warningNutrientImg {
+    display: none;
   }
 }

@@ -10,10 +10,10 @@ loginBtn.addEventListener("click", (e) => {
   e.preventDefault();
   if (userId.value === "") alert("아이디를 입력하세요.");
   else if (userPw.value === "") alert("비밀번호를 입력하세요.");
-  else if (userId.value === "yon980824@gmail.com" && userPw.value === "1234") {
+  else if (userId.value === "user01@gmail.com" && userPw.value === "1234") {
     sessionStorage.setItem("userId", true);
-    location.href = "../userInfo.html";
-  }
+    location.href = "./userInfo.html";
+  } else alert("아이디 혹은 비밀번호가 틀렸습니다..");
   console.log(userId.value);
 });
 
