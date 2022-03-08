@@ -4,8 +4,6 @@ let url =
 
 let gbl_data;
 let menuData;
-// onLoadFood(foodURL("토마토두루치기"));
-// console.log(gbl_data);
 
 const today = new Date();
 const currentYear = `${today.getFullYear()}`;
@@ -29,11 +27,37 @@ dateSelectBtn.addEventListener("click", () => {
   }, 500);
 });
 
+setTimeout(() => {
+  menuListTxt();
+}, 5000);
+
+function menuListTxt() {
+  let menuList = [...document.querySelectorAll("#checkMenu .menus__item")];
+  for (const li of menuList) {
+    console.log("hi");
+    li.addEventListener("click", (e) => {
+      const target = e.target;
+      console.log(target);
+      if (target.tagName == "A") {
+        const pTag = target.querySelector(`.item--name`);
+        pTagTxt = pTag.textContent;
+      } else if (target.tagName == "IMG") {
+        const pTag =
+          target.parentNode.nextElementSibling.querySelector(`.item--name`);
+        pTagTxt = pTag.textContent;
+      } else if (target.className == "item--name") {
+        pTagTxt = target.textContent;
+      }
+      console.log(pTagTxt);
+      sessionStorage.setItem("pTagTxt", pTagTxt);
+    });
+  }
+}
+
 // Load menus
 function loadSelectedDate(selectedDate, order) {
-  console.log("날짜: " + order);
+  console.log("날짜: " + selectedDate, order);
   loadMenu().then((menus) => {
-    var flag = true;
     const content = document.querySelector(`#checkMenu .menus`);
     content.innerHTML = "";
     console.log(menus[order][`${selectedDate}`]);
@@ -107,6 +131,7 @@ function loadSelectedDate(selectedDate, order) {
               content.append(li);
             });
           }
+          menuListTxt();
         });
     }
   });
@@ -138,6 +163,7 @@ function loadMenu() {
 // Add Menu
 function addMenu(menu, menuImg, menukcal) {
   const li = document.createElement("li");
+  const a = document.createElement("a");
   const imgBox = document.createElement("div");
   const img = document.createElement("img");
   const itemInfo = document.createElement("div");
@@ -145,6 +171,7 @@ function addMenu(menu, menuImg, menukcal) {
   const calorie = document.createElement("span");
 
   li.setAttribute("class", "menus__item");
+  a.setAttribute("href", "./foodInfo.html");
   imgBox.setAttribute("class", "item__imgBox");
   img.setAttribute("src", menuImg);
   itemInfo.setAttribute("class", "item__info");
@@ -155,7 +182,8 @@ function addMenu(menu, menuImg, menukcal) {
   calorie.append(`${menukcal}kcal`);
   imgBox.append(img);
   itemInfo.append(name, calorie);
-  li.append(imgBox, itemInfo);
+  a.append(imgBox, itemInfo);
+  li.append(a);
 
   return li;
 }

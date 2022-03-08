@@ -1,6 +1,7 @@
 const url =
   "http://openapi.foodsafetykorea.go.kr/api/92804346bfe547c5a581/COOKRCP01/json/1/5/RCP_NM=";
 const pTagTxt = sessionStorage.getItem("pTagTxt");
+console.log(pTagTxt);
 loadData(changeURL(pTagTxt));
 
 let foodData;

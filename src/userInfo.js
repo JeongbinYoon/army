@@ -4,7 +4,7 @@ if (sessionStorage.getItem("userId") == "true") {
   const inputPw = document.querySelector(".basicInfo__userPw");
   inputId.readOnly = true;
   inputPw.readOnly = true;
-  inputId.setAttribute("placeholder", "아이디: yon980824@gmail.com");
+  inputId.setAttribute("placeholder", "아이디: user01@gmail.com");
   inputPw.setAttribute("placeholder", "비밀번호: ****");
   inputId.style.background = "white";
   inputPw.style.background = "white";

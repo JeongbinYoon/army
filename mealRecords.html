@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>식단 기록</title>
+  </head>
+  <body id="mealRecords">
+    <img
+      class="records"
+      src="./imgs/식단기록.png"
+      alt="식단기록"
+      usemap="#mealRecords"
+    />
+    <map name="mealRecords">
+      <area
+        shape="rect"
+        coords="0,49,53,91"
+        onclick="history.back()"
+        alt="뒤로가기"
+      />
+      <area
+        shape="rect"
+        coords="360,49,395,91"
+        onclick="calendar()"
+        alt="달력"
+      />
+      <area
+        shape="rect"
+        coords="54,615,350,673"
+        onclick="warningNutrient()"
+        alt="기록완료"
+      />
+    </map>
+
+    <img
+      class="calendarImg"
+      src="./imgs/식단기록저장.png"
+      alt="식단기록저장"
+      usemap="#mealRecords-calendar"
+    />
+    <map name="mealRecords-calendar">
+      <area
+        shape="rect"
+        coords="360,49,395,91"
+        onclick="calendarOff()"
+        alt="달력종료"
+      />
+    </map>
+
+    <img
+      class="warningNutrientImg"
+      src="./imgs/주의영양소.png"
+      alt="주의영양소"
+      usemap="#warningNutrient"
+    />
+    <map name="warningNutrient">
+      <area
+        shape="rect"
+        coords="0,49,53,91"
+        onclick="warningNutrientOff()"
+        alt="뒤로가기"
+      />
+    </map>
+
+    <script>
+      const records = document.querySelector(".records");
+      const calendarImg = document.querySelector(".calendarImg");
+      const warningNutrientImg = document.querySelector(".warningNutrientImg");
+      function calendar() {
+        records.style.display = "none";
+        calendarImg.style.display = "block";
+      }
+      function calendarOff() {
+        records.style.display = "block";
+        calendarImg.style.display = "none";
+      }
+      function warningNutrient() {
+        records.style.display = "none";
+        warningNutrientImg.style.display = "block";
+      }
+      function warningNutrientOff() {
+        records.style.display = "block";
+        warningNutrientImg.style.display = "none";
+      }
+    </script>
+  </body>
+</html>

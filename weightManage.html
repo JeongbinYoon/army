@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>체중 관리</title>
+  </head>
+  <body id="weightManage">
+    <img
+      class="weightImg"
+      src="./imgs/체중관리1.png"
+      alt="체중관리"
+      usemap="#weightManage"
+    />
+    <map name="weightManage">
+      <area
+        shape="rect"
+        coords="0,49,53,91"
+        onclick="history.back()"
+        alt="뒤로가기"
+      />
+      <area
+        shape="rect"
+        coords="54,505,350,553"
+        onclick="weight()"
+        alt="기록완료"
+      />
+    </map>
+
+    <img
+      class="weightImg2"
+      src="./imgs/체중관리2.png"
+      alt="체중관리"
+      usemap="#weightManage2"
+    />
+    <map name="weightManage2">
+      <area
+        shape="rect"
+        coords="0,49,53,91"
+        onclick="weightOff()"
+        alt="뒤로가기"
+      />
+    </map>
+
+    <script>
+      const weightImg = document.querySelector(".weightImg");
+      const weightImg2 = document.querySelector(".weightImg2");
+      function weight() {
+        weightImg.style.display = "none";
+        weightImg2.style.display = "block";
+      }
+      function weightOff() {
+        weightImg.style.display = "block";
+        weightImg2.style.display = "none";
+      }
+    </script>
+  </body>
+</html>

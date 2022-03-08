@@ -22,23 +22,24 @@ for (const btn of sliderBtn) {
   });
 }
 
-selectedMeal.addEventListener("click", (e) => {
-  const target = e.target;
-  if (target.className == "meal__selected") {
-    const pTag = target.querySelector(`.selected--name`);
-    pTagTxt = pTag.textContent;
-  } else if (target.tagName == "IMG") {
-    const pTag =
-      target.parentNode.nextElementSibling.querySelector(`.selected--name`);
-    pTagTxt = pTag.textContent;
-  } else if (target.className == "selected--description") {
-    const pTag = target.nextElementSibling;
-    pTagTxt = pTag.textContent;
-  } else if (target.tagName == "P") {
-    pTagTxt = target.textContent;
-  }
-  sessionStorage.setItem("pTagTxt", pTagTxt);
-});
+selectedMeal &&
+  selectedMeal.addEventListener("click", (e) => {
+    const target = e.target;
+    if (target.className == "meal__selected") {
+      const pTag = target.querySelector(`.selected--name`);
+      pTagTxt = pTag.textContent;
+    } else if (target.tagName == "IMG") {
+      const pTag =
+        target.parentNode.nextElementSibling.querySelector(`.selected--name`);
+      pTagTxt = pTag.textContent;
+    } else if (target.className == "selected--description") {
+      const pTag = target.nextElementSibling;
+      pTagTxt = pTag.textContent;
+    } else if (target.tagName == "P") {
+      pTagTxt = target.textContent;
+    }
+    sessionStorage.setItem("pTagTxt", pTagTxt);
+  });
 
 for (const btn of items) {
   btn.addEventListener("click", (e) => {
@@ -221,8 +222,10 @@ function calendar() {
   dateSelectBtn.addEventListener("click", () => {
     sessionStorage.setItem("selectedDay", JSON.stringify(selectedDay));
     calendar.style.display = "none";
-
     changeSelectDate();
+    setTimeout(() => {
+      menuListTxt();
+    }, 5000);
   });
 
   // Close calendar
@@ -230,4 +233,27 @@ function calendar() {
   closeCalendar.addEventListener("click", () => {
     calendar.style.display = "none";
   });
+
+  function menuListTxt() {
+    let menuList = [...document.querySelectorAll("#checkMenu .menus__item")];
+    for (const li of menuList) {
+      console.log("hi");
+      li.addEventListener("click", (e) => {
+        const target = e.target;
+        console.log(target);
+        if (target.tagName == "A") {
+          const pTag = target.querySelector(`.item--name`);
+          pTagTxt = pTag.textContent;
+        } else if (target.tagName == "IMG") {
+          const pTag =
+            target.parentNode.nextElementSibling.querySelector(`.item--name`);
+          pTagTxt = pTag.textContent;
+        } else if (target.className == "item--name") {
+          pTagTxt = target.textContent;
+        }
+        console.log(pTagTxt);
+        sessionStorage.setItem("pTagTxt", pTagTxt);
+      });
+    }
+  }
 }
